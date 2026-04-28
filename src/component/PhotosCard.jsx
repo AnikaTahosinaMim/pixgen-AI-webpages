@@ -1,12 +1,12 @@
 import { Button, Chip, Separator } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { AiOutlineDownload } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";
 
 const PhotosCard = ({ photo }) => {
-  console.log(photo);
   return (
     <div className="border p-4 rounded-lg space-y-3">
       <div className="relative w-full aspect-square">
@@ -17,7 +17,9 @@ const PhotosCard = ({ photo }) => {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover rounded-sm"
         ></Image>
-        <Chip size="sm" className="absolute top-2 right-2 ">{photo.category}</Chip>
+        <Chip size="sm" className="absolute top-2 right-2 ">
+          {photo.category}
+        </Chip>
       </div>
 
       <h2>{photo.title}</h2>
@@ -32,7 +34,11 @@ const PhotosCard = ({ photo }) => {
           <p>{photo.downloads}</p>
         </span>
       </div>
-      <Button variant="outline" className={"w-full"}>view details</Button>
+      <Link href={`/all-photos/${photo.id}`}>
+        <Button variant="outline" className={"w-full"}>
+          view details
+        </Button>
+      </Link>
     </div>
   );
 };
