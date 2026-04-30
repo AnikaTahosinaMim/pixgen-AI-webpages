@@ -75,9 +75,7 @@ const SingInpages = () => {
           </Button>
         </div>
       </Form>
-      <Button variant="outline" >
-        Continue with google
-      </Button>
+      
     </div>
   );
 };

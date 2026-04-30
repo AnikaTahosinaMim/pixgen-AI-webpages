@@ -23,9 +23,15 @@ const SingInpages = () => {
 
       callbackURL: "/",
     });
+
     console.log({ data, error });
 
     // console.log({ name, email, url, password });
+  };
+  const handleGoogle = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
   };
   return (
     <div className="border p-4 my-6  justify-center mx-auto ">
@@ -54,6 +60,10 @@ const SingInpages = () => {
           </Button>
         </div>
       </Form>
+      <p>or Singup oder </p>
+      <Button variant="outline" onClick={handleGoogle}>
+        Continue with google
+      </Button>
     </div>
   );
 };
