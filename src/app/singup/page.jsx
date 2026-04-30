@@ -36,11 +36,7 @@ const SingInpages = () => {
 
     // console.log({ name, email, url, password });
   };
-  const handleGoogle = async () => {
-    await authClient.signIn.social({
-      provider: "google",
-    });
-  };
+  
   return (
     <div className="border p-4 my-6  justify-center mx-auto ">
       <Form onSubmit={onSubmit} className="flex w-96 flex-col gap-4">
@@ -79,7 +75,7 @@ const SingInpages = () => {
           </Button>
         </div>
       </Form>
-      <Button variant="outline" onClick={handleGoogle}>
+      <Button variant="outline" >
         Continue with google
       </Button>
     </div>
